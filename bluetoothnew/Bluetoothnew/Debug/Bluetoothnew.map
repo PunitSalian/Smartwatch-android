@@ -1,0 +1,109 @@
+Optimizing Linkage Editor (V.10.02.00.000)        16-Oct-2016 00:06:32
+
+*** Options ***
+
+-subcommand=C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\Bluetoothnew.hlk
+-noprelink
+-rom=D=R,D_1=R_1,D_2=R_2
+-nomessage
+-vect=_undefined_interrupt_source_isr
+-list="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\Bluetoothnew.map"
+-nooptimize
+-start=SI,SU,B_1,R_1,B_2,R_2,B,R/00,C_1,C_2,C,C$*,L*,D*,P,W*/0FFF80000,FIXEDVECT/0FFFFFF90
+-nologo
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\accelerometer_demo.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\acceltempsensorinit.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\ADC.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\alarm.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\bitmap_font.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\cmt_periodic_multi.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\dbsct.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\flash_options.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\font_8x8.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\glyph.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\heartsensor.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\hwsetup.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\lcd.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\lowlvl.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\lowsrc.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\mainapp.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\mcu_mode.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\power_modes_demo.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\r_glyph.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\r_glyph_register.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\r_riic_rx600.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\r_riic_rx600_master.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\r_rspi_rx600.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\r_switches.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\resetprg.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\rtc.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\rtc_hal.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\sbrk.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\speaker.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\st7579_lcd.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\stopwatch.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\strtok.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\thermal_sensor_demo.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\topgun.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\uart.obj"
+-input="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\vecttbl.obj"
+-library="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\Bluetoothnew.lib"
+-output="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\Bluetoothnew.abs"
+-end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+
+SI
+                                  00000000  000003ff       400   4
+SU
+                                  00000400  000013ff      1000   4
+B_1
+                                  00001400  00001544       145   1
+R_1
+                                  00001545  000015b0        6c   1
+B_2
+                                  000015b2  000015bd         c   2
+R_2
+                                  000015be  000015be         0   2
+B
+                                  000015c0  00001a5f       4a0   4
+R
+                                  00001a60  000021b7       758   4
+$ADDR_C_FF7FFFE8
+                                  ff7fffe8  ff7fffff        18   1
+C_1
+                                  fff80000  fff81127      1128   1
+C_2
+                                  fff81128  fff81329       202   2
+C
+                                  fff8132c  fff813e3        b8   4
+C$DSEC
+                                  fff813e4  fff81407        24   4
+C$BSEC
+                                  fff81408  fff8141f        18   4
+C$VECT
+                                  fff81420  fff8181f       400   4
+L
+                                  fff81820  fff81bf4       3d5   4
+D
+                                  fff81bf8  fff8234f       758   4
+D_1
+                                  fff82350  fff823bb        6c   1
+D_2
+                                  fff823bc  fff823bc         0   2
+P
+                                  fff823bc  fff89068      6cad   1
+W_1
+                                  fff89069  fff89069         0   1
+W_2
+                                  fff8906a  fff8916d       104   2
+W
+                                  fff89170  fff89170         0   4
+$ADDR_C_FFFFFF80
+                                  ffffff80  ffffff8f        10   1
+FIXEDVECT
+                                  ffffff90  ffffffff        70   4

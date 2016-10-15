@@ -1,0 +1,5 @@
+"C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_bsp\board\rdkrx63n\lowlvl.src"
+-cpu=rx600
+-debug
+-output="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\lowlvl.obj"
+-nologo

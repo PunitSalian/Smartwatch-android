@@ -1,0 +1,14 @@
+-cpu=rx600
+-lang=c99
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_bsp"
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_glyph"
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_glyph\src"
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_glyph\src\glyph"
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_rspi_rx600"
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\r_rspi_rx600\src"
+-include="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\src"
+-output=obj="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\thermal_sensor_demo.obj"
+-debug
+-speed
+"C:\Users\punit\Dropbox\WorkSpace\bluetoothnew\Bluetoothnew\src\TEMPTsource\thermal_sensor_demo.c"
+-nologo

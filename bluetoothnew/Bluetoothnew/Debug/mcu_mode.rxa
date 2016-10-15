@@ -1,0 +1,5 @@
+"C:\Users\punit\Dropbox\WorkSpace\bluetoothnew\Bluetoothnew\src\LOWPOWERsource\mcu_mode.src"
+-cpu=rx600
+-debug
+-output="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\mcu_mode.obj"
+-nologo

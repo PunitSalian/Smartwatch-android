@@ -1,0 +1,4 @@
+-cpu=rx600
+-output="C:\Users\punit\Dropbox\WorkSpace\Bluetoothnew\Bluetoothnew\Debug\Bluetoothnew.lib"
+-lang=c99
+-head=runtime,stdio,stdlib

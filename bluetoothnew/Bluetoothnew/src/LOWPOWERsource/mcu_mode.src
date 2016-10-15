@@ -1,0 +1,79 @@
+;*******************************************************************************
+; DISCLAIMER
+; This software is supplied by Renesas Electronics Corporation and is only 
+; intended for use with Renesas products. No other uses are authorized. This 
+; software is owned by Renesas Electronics Corporation and is protected under
+; all applicable laws, including copyright laws.
+; THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+; THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+; LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE 
+; AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+; TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS 
+; ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE 
+; FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+; ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+; BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+; Renesas reserves the right, without notice, to make changes to this software
+; and to discontinue the availability of this software. By using this software,
+; you agree to the additional terms and conditions found by accessing the 
+; following link:
+; http://www.renesas.com/disclaimer *
+; Copyright (C) 2011 Renesas Electronics Corporation. All rights reserved.    
+;*******************************************************************************
+;*******************************************************************************
+; File Name     : mcu_mode.src
+; Version       : 1.0
+; Device(s)     : RX6xx
+; Description   : Function to switch from user to supervisor mode
+;*******************************************************************************
+;*******************************************************************************
+; History : DD.MM.YYYY     Version     Description
+;         : 06.09.2011     1.00        First release
+;*******************************************************************************
+
+            .GLB    _chg_pmsuper
+
+            .SECTION P,CODE
+
+SWITCH_VECTOR .EQU  0
+;*******************************************************************************
+; Function name: _chg_pmsuper
+; Description  : Changes the processor mode to supervisor mode
+; Arguments    : none
+; Return value : none
+;*******************************************************************************
+_chg_pmsuper:
+            ; Generate an interrupt to get into supervisor mode
+            ; In this example, interrupt vector 0 is used.  This is the same
+            ; vector as the BRK instruction.  If your application needs to use
+            ; BRK for some other reason, change the vector number in the INT 
+            ; instruction to an unused interrupt and changed the corresponding
+            ; .RVECTOR line below to match.
+            ; 
+            INT #SWITCH_VECTOR
+            RTS
+            NOP
+            NOP
+            
+;*******************************************************************************
+; Function name: _excep_brk_isr
+; Description  : Interrupt handler for the BRK exception (vector 0)
+;                This function modifies the PM bit of the PSW that was pushed
+;                onto the stack when the exception fired.  This has the effect
+;                of returning to the user's code with the processor mode
+;                forced to supervisor mode.
+; Arguments    : None
+; Return value : None. The processor mode is changed to supervisor mode on return
+;*******************************************************************************
+            .RVECTOR    SWITCH_VECTOR, _excep_brk_isr
+_excep_brk_isr:
+            PUSH.L      R2          ; Save register used by this function
+            MOV.L       8[SP],R2    ; Retrieve PSW from stack (PSW as it was before exception)
+            BCLR        #20,R2      ; Clear the PM bit to force supervisor mode on return
+            MOV.L       R2,8[SP]    ; Put the modified value back on the stack
+            POP         R2          ; Restore the register
+            RTE                     ; Exit (and change PM in the process)
+            NOP
+            NOP
+            
+            .END
